@@ -50,5 +50,26 @@ def calcular_gastos(lista_gastos):
         total_acumulado += gasto_individual["valor"]
     print(f"\nEl gasto total acumulado de todos los vehículos es: ${total_acumulado}")
 
+def buscar_gastos(lista_gastos):
+    # 1. Pedimos la placa que queremos encontrar
+    placa_buscada = input("\nIngrese la placa que desea buscar: ")
+
+    # Variable para saber si encontramos al menos un gasto
+    encontrado = False
+
+    print(f"\n--- Resultados para la placa {placa_buscada} ---")
+
+    # 2. Recorremos toda la lista
+    for gasto in lista_gastos:
+        # 3. El condicional IF: ¿La placa de esta ficha es igual a la que busco?
+        if gasto["placa"] == placa_buscada:
+            print(f"Concepto: {gasto['concepto']} | Valor: ${gasto['valor']}")
+            encontrado = True  # Sí encontramos algo
+
+    # Si el ciclo termina y 'encontrado' sigue siendo False, avisamos que no hay nada
+    if not encontrado:
+        print("No se encontraron gastos registrados para esta placa.")
+    print("-----------------------------------------")
+
 if __name__ == "__main__":
     menu()
