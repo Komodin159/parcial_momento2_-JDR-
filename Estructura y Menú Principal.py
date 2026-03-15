@@ -44,6 +44,11 @@ def registrar_gastos(lista_gastos):
     lista_gastos.append(nuevo_gasto)
 
     print(f"Gasto de la placa {placa} se registró con éxito")
+def calcular_gastos(lista_gastos):
+    total_acumulado = 0.0
+    for gasto_individual in lista_gastos:
+        total_acumulado += gasto_individual["valor"]
+    print(f"\nEl gasto total acumulado de todos los vehículos es: ${total_acumulado}")
 
 if __name__ == "__main__":
     menu()
