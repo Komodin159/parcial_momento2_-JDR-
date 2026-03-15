@@ -1,5 +1,3 @@
-import pandas as pd
-
 gastos = []
 
 
@@ -9,21 +7,26 @@ def menu():
         print(" CONTROL DE GASTOS - VEHÍCULOS")
         print("=" * 30)
         print("1. Registrar nuevo gasto")
-        print("2. Ver lista de gastos")
-        print("3. Calcular totales")
-        print("4. Buscar gasto")
-        print("5. Salir")
+        print("2. Calcular total de gastos")
+        print("3. Buscar gastos por placa")
+        print("4. Salir")
         print("-" * 30)
 
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            print("\n-> Opción en desarrollo (usar ramas)...")
+            registrar_gastos(gastos)
+
         elif opcion == "2":
-            print("\n-> Opción en desarrollo (usar ramas)...")
-        elif opcion == "5":
+            calcular_gastos(gastos)
+
+        elif opcion == "3":
+            buscar_gastos(gastos)
+
+        elif opcion == "4":
             print("Saliendo del sistema. ¡Hasta luego!")
             break
+
         else:
             print("Opción no válida, intenta de nuevo.")
 
